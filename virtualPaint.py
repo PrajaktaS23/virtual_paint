@@ -5,20 +5,20 @@ import  numpy as np
 frameWidth= 640
 frameHeight= 480
 cap=cv2.VideoCapture(0)
-cap.set(3,640)
+cap.set(3,640) 
 cap.set(4,480)
-cap.set(10,100)
+cap.set(10,100) #bightness
 
 myColors=[[2,107,0,19,255,255],
           [133,56,0,159,156,255],
-          [57,76,0,100,255,255]]
+          [57,76,0,100,255,255]]  #[hue_min,sat_min,val_min,hue_max,sat_max,val_max]
+
 myColorValues=[[51,153,255],
                [255,0,255],
-               [0,255,0]]
-myPoints=[]
+               [0,255,0]]  
+myPoints=[] #[x,y,color]
 
 def findColor(img,myColors,myColorValues):
-
     imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     count=0
     newPoints=[]
